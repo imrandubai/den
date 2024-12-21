@@ -5,6 +5,11 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"net/http"
+	"net/http/httptest"
+	"strings"
+	"testing"
+
 	"github.com/element-hq/dendrite/setup/config"
 	"github.com/element-hq/dendrite/test"
 	"github.com/element-hq/dendrite/test/testrig"
@@ -12,10 +17,6 @@ import (
 	"github.com/matrix-org/gomatrixserverlib"
 	"github.com/matrix-org/gomatrixserverlib/fclient"
 	"github.com/matrix-org/gomatrixserverlib/spec"
-	"net/http"
-	"net/http/httptest"
-	"strings"
-	"testing"
 )
 
 type mockKeyAPI struct {

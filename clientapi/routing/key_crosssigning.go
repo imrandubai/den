@@ -8,10 +8,11 @@ package routing
 
 import (
 	"context"
-	"github.com/matrix-org/gomatrixserverlib/fclient"
-	"github.com/sirupsen/logrus"
 	"net/http"
 	"time"
+
+	"github.com/matrix-org/gomatrixserverlib/fclient"
+	"github.com/sirupsen/logrus"
 
 	"github.com/element-hq/dendrite/clientapi/auth"
 	"github.com/element-hq/dendrite/clientapi/auth/authtypes"
@@ -132,7 +133,7 @@ func UploadCrossSigningDeviceKeys(
 	}
 }
 
-func keysDiffer(existingMasterKey fclient.CrossSigningKey, keyResp api.QueryKeysResponse, uploadReq *crossSigningRequest, userID string, ) bool {
+func keysDiffer(existingMasterKey fclient.CrossSigningKey, keyResp api.QueryKeysResponse, uploadReq *crossSigningRequest, userID string) bool {
 	masterKeyEqual := existingMasterKey.Equal(&uploadReq.MasterKey)
 	if !masterKeyEqual {
 		return true
