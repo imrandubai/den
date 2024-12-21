@@ -34,7 +34,7 @@ func (m mockKeyAPI) QueryKeys(ctx context.Context, req *api.QueryKeysRequest, re
 }
 
 func (m mockKeyAPI) PerformUploadDeviceKeys(ctx context.Context, req *api.PerformUploadDeviceKeysRequest, res *api.PerformUploadDeviceKeysResponse) {
-	return
+	// Just a dummy upload which always succeeds
 }
 
 func getAccountByPassword(ctx context.Context, req *api.QueryAccountByPasswordRequest, res *api.QueryAccountByPasswordResponse) error {
@@ -67,7 +67,7 @@ func Test_UploadCrossSigningDeviceKeys_ValidRequest(t *testing.T) {
 }
 
 // Require UIA if there is an existing master key and there is no auth provided.
-func Test_UploadCrossSigningDeviceKeys_Unauthorized(t *testing.T) {
+func Test_UploadCrossSigningDeviceKeys_Unauthorised(t *testing.T) {
 	userID := "@user:example.com"
 
 	// Note that there is no auth field.
